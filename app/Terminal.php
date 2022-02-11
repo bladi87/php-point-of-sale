@@ -29,13 +29,13 @@ class Terminal
         }
     }
 
-    public function getTotalCost() : float
+    public function getTotalPrice() : float
     {
-        $totalCost = 0.00;
+        $totalPrice = 0.00;
         foreach ($this->scannedProducts as $productName => $qty) {
-            $totalCost += $this->calculate($productName, $qty);
+            $totalPrice += $this->calculate($productName, $qty);
         }
-        return $totalCost;
+        return $totalPrice;
     }
 
     private function calculate(string $productName, int $qty) : float
@@ -48,6 +48,11 @@ class Terminal
             $volumePrice = $product->getVolumePrice()->getPrice();
             return intval($qty / $volumeUnit) * $volumePrice + fmod($qty, $volumeUnit) * $product->getPrice();
         }
+    }
+
+    public function reset(): void
+    {
+        $this->scannedProducts = [];
     }
 
     /**

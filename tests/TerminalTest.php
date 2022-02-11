@@ -37,7 +37,7 @@ class TerminalTest extends TestCase
         $terminal->scan("A");
 
         $this->assertEquals(4, sizeof($terminal->getScannedProducts()));
-        $this->assertEquals(32.40, $terminal->getTotalCost());
+        $this->assertEquals(32.40, $terminal->getTotalPrice());
     }
 
     /** @test  */
@@ -53,7 +53,7 @@ class TerminalTest extends TestCase
         $terminal->scan("C");
 
         $this->assertEquals(1, sizeof($terminal->getScannedProducts()));
-        $this->assertEquals(7.25, $terminal->getTotalCost());
+        $this->assertEquals(7.25, $terminal->getTotalPrice());
     }
 
     /** @test  */
@@ -66,6 +66,6 @@ class TerminalTest extends TestCase
         $terminal->scan("D");
 
         $this->assertEquals(4, sizeof($terminal->getScannedProducts()));
-        $this->assertEquals(15.40, $terminal->getTotalCost());
+        $this->assertEquals(15.40, $terminal->getTotalPrice());
     }
 }

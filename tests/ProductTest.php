@@ -71,7 +71,7 @@ class ProductTest extends TestCase
         $terminal->scan("A");
 
         $this->assertEquals(1, sizeof($terminal->getScannedProducts()));
-        $this->assertEquals(9.00, $terminal->getTotalCost());
+        $this->assertEquals(9.00, $terminal->getTotalPrice());
     }
 
 
